@@ -206,7 +206,6 @@ export default function Gallery() {
                   src={img.src}
                   alt={img.alt}
                   fill
-                  unoptimized
                   style={{ objectFit: "cover" }}
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
