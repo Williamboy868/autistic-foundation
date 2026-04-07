@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   ROMEO FOUNDATION — Design System (MiniMax)
+   Fonts: DM Sans (UI) · Outfit (display) · Poppins (mid-tier)
+   Palette: Pure white dominant · Blue brand family
+────────────────────────────────────────────── */
+
+:root {
+  /* Brand primary */
+  --brand-6: #1456f0;
+  --col-brand00: #3daeff;
+  --col-brand02: #ea5ec1;
+
+  /* Blue scale */
+  --color-primary-200: #bfdbfe;
+  --color-primary-light: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --brand-3: #17437d;
+
+  /* Text */
+  --col-text00: #222222;
+  --col-text04: #45515e;
+  --col-text-mute: #8e8e93;
+  --brand-2: #5f5f5f;
+
+  /* Surfaces */
+  --col-bg13: #ffffff;
+  --bg-surface: #f7f8f9;
+  --fill-bg-white: hsla(0, 0%, 100%, 0.4);
+  --border-light: #f2f3f5;
+  --border-gray: #e5e7eb;
+
+  /* Dark surface (footer / impact) */
+  --dark-surface: #181e25;
+
+  /* Shadows */
+  --shadow-card: rgba(0, 0, 0, 0.08) 0px 4px 6px;
+  --shadow-glow: rgba(0, 0, 0, 0.08) 0px 0px 22.576px;
+  --shadow-brand: rgba(44, 30, 116, 0.16) 0px 0px 15px;
+  --shadow-brand-dir: rgba(44, 30, 116, 0.11) 6.5px 2px 17.5px;
+  --shadow-elevated: rgba(36, 36, 36, 0.08) 0px 12px 16px -4px;
+
+  /* Fonts */
+  --font-display: var(--font-outfit), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-ui: var(--font-dm-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mid: var(--font-poppins), "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Radius */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-2xl: 24px;
+  --r-3xl: 32px;
+  --r-pill: 9999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-ui);
+  background: var(--col-bg13);
+  color: var(--col-text00);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::selection {
+  background: var(--color-primary-200);
+  color: var(--brand-3);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-gray);
+  border-radius: 99px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Utility: visually hidden but accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* ── GSAP: elements start invisible */
+.gsap-reveal {
+  opacity: 0;
+}
+
+/* ── Noise texture overlay for hero */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  pointer-events: none;
+  z-index: 0;
+}
