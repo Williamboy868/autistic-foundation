@@ -425,7 +425,7 @@ export default function Hero() {
             }}
           >
             <Image
-              src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=800&auto=format&fit=crop&q=80"
+              src="/web-image.jpg"
               alt="A family sharing a joyful moment together"
               width={800}
               height={480}
